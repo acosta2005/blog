@@ -1,0 +1,11 @@
+services:
+  flask_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:5000"  # Redirige el puerto 80 al puerto 5000 en el contenedor
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
